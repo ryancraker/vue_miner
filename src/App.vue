@@ -42,6 +42,7 @@ function shortenInterval() {
   </div>
   <hr>
   <b class="text-center fs-1">CHEESE UPGRADE SHOP</b>
+  <hr>
   <div class="container-fluid">
     <div class="row">
       <div class="col-6 ps-3">
@@ -72,9 +73,10 @@ function shortenInterval() {
   </div>
   <hr>
   <b class="text-center fs-1">MODIFIER UPGRADE SHOP</b>
+  <hr>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-3">
+      <div class="col-3 my-3">
         <button type="button" @click="shortenInterval()">Lower auto collect interval by 5%</button>
       </div>
     </div>
