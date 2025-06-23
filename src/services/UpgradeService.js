@@ -28,5 +28,8 @@ class UpgradeService {
       this.autoUpgrades();
     }, AppState.interval);
   }
+  shortenInterval() {
+    AppState.interval *= 0.95;
+  }
 }
 export const upgradeService = new UpgradeService();

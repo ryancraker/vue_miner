@@ -20,6 +20,9 @@ function mine() {
 function buyUpgrade(upgrade) {
   upgradeService.buyUpgrade(upgrade)
 }
+function shortenInterval() {
+  upgradeService.shortenInterval()
+}
 </script>
 
 
@@ -37,27 +40,42 @@ function buyUpgrade(upgrade) {
       </div>
     </div>
   </div>
+  <hr>
   <b class="text-center fs-1">CHEESE UPGRADE SHOP</b>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-6">
+      <div class="col-6 ps-3">
         <div>{{ miningPower + clickPower }} per click</div>
+        <hr>
         <div v-for="upgrade in clickUpgrades" :key="upgrade.id" class="row">
           <div class="col-5">
-            <button :disabled="AppState.cheese < upgrade.price" @click="buyUpgrade(upgrade)" type="button">Buy {{
-              upgrade.name }} for {{ upgrade.price
-              }} ched</button>
+            <button class="mb-0" type="button" :disabled="AppState.cheese < upgrade.price"
+              @click="buyUpgrade(upgrade)">Buy {{
+                upgrade.name }} for {{ upgrade.price }} ched</button>
+            <p class="mt-1">{{ upgrade.quantity }}/{{ upgrade.name }}s</p>
           </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-6 ps-3">
         <div>{{ autoCollect }} every {{ interval }} seconds</div>
+        <hr>
         <div v-for="upgrade in autoUpgrades" :key="upgrade.id" class="row">
           <div class="col-5">
-            <button type="button" :disabled="AppState.cheese < upgrade.price" @click="buyUpgrade(upgrade)">Buy {{
-              upgrade.name }} for {{ upgrade.price }} ched</button>
+            <button class="mb-0" type="button" :disabled="AppState.cheese < upgrade.price"
+              @click="buyUpgrade(upgrade)">Buy {{
+                upgrade.name }} for {{ upgrade.price }} ched</button>
+            <p class="mt-1">{{ upgrade.quantity }}/{{ upgrade.name }}s</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <b class="text-center fs-1">MODIFIER UPGRADE SHOP</b>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <button type="button" @click="shortenInterval()">Lower auto collect interval by 5%</button>
       </div>
     </div>
   </div>
