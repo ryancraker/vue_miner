@@ -25,13 +25,16 @@ function buyUpgrade(upgrade) {
 
 // HTML
 <template>
-  <span>you have {{ cheese }} ched</span>
+  <h1 class="text-center my-2">VUE MINER</h1>
+  <hr>
+  <span class="text-center fs-1">you have {{ cheese }} ched</span>
   <div class="container">
-    <div class="row d-flex justify-content-center">
-      <div class="col-6"></div>
-      <img id="planet"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Jupiter_Rotation_Movie_-_Hubble_2015.gif/640px-Jupiter_Rotation_Movie_-_Hubble_2015.gif"
-        alt="jupiter" @click="mine()" @contextmenu.prevent="mine()">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <img id="planet"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Jupiter_Rotation_Movie_-_Hubble_2015.gif/640px-Jupiter_Rotation_Movie_-_Hubble_2015.gif"
+          alt="jupiter" @click="mine()" @contextmenu.prevent="mine()">
+      </div>
     </div>
   </div>
   <b class="text-center fs-1">CHEESE UPGRADE SHOP</b>
@@ -64,6 +67,16 @@ function buyUpgrade(upgrade) {
 // styles
 <style lang="scss">
 @import "./assets/scss/main.scss";
+
+body {
+  background: black;
+  color: whitesmoke;
+  font-family: "Cherry Bomb One";
+}
+
+img {
+  border-radius: 100%;
+}
 
 button {
   background: yellow;
